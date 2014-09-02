@@ -1,0 +1,7 @@
+# flow_monitor config
+---
+log:
+  level: DEBUG
+  path: /home/wenli/tmp/flow_monitor/log/flow_monitor.log
+
+port: 8083

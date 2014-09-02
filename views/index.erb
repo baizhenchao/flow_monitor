@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">  
+<head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />  
+	<title>Real-time monitor</title>  
+	<meta http-equiv="refresh" content="5;http://www.yourdomain.com" />  
+</head>
+<body>
+		<h2 style="align:center">Real-time monitor's desplay</h2>
+		<table border="1" style="color:#333333;border-color:#999999;border-collapse:collapse;width:80%;">
+				<tr style="background:#b5cfd2">
+						<td>itemname</td>
+						<td>time</td>
+						<td>svalue</td>
+						<td>sumvalue</td>
+						<td>value</td>
+				</tr>
+				<% @datalist.each do |data| %>
+				<tr style="background:#dcddc0">
+						<td><%= data[0] %></td>
+						<td><%= data[1] %></td>
+						<td><%= data[2] %></td>
+						<td><%= data[3] %></td>
+						<td><%= data[4] %></td>
+				</tr>
+				<% end %>
+</body>
+</html>

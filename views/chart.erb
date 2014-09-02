@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      #container {
+        width : 800px;
+        height: 400px;
+        margin: 8px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Real-time monitor display chart:</h2><br>
+    <div id="container"></div>
+    <script type="text/javascript" src="./flotr2.min.js"></script>
+    <script type="text/javascript">
+    function drawChart(data){
+      var container = document.getElementById("container");
+
+      var option={
+	xaxis:{
+	mode:'time',
+	labelsAngle:45
+	},
+	selection:{
+	mode:'x'
+	},
+	HtmlText:false,
+	title:'Time'
+} ;
+
+      // Draw Graph
+      Flotr.draw(container, data, option);
+    }  
+    </script>
+
+    <script type="text/javascript">
+ var
+    bj = [[1, -9], [2, 1], [3, 12], [4, 20],[5, 26], [6, 30], [7, 32], [8, 29],[9, 22], [10, 12], [11, 0], [12, -6]],// First data series
+    sz = [[1, 15], [2, 16], [3, 19], [4, 22],[5, 26], [6, 27], [7, 28], [8, 28],[9, 27], [10, 25], [11, 20], [12, 16]]; //Second data series
+var d1=[[0,3],[4,8],[8,5],[9,13]];
+d2=[];
+for(i=0;i<13;i+=0.5){
+	d2.push([i,Math.sin(i)]);
+}
+
+dt1=[];
+start=new Date("2014/08/01 08:00:01").getTime()
+for(i=0;i<100;i++){
+	x=start+(i*1000);
+dt1.push([x,i+Math.random()*30+Math.sin(i/20+Math.random()*2)*20+Math.sin(i/10+Math.random())*10]);
+}
+
+ var data = [dt1];
+  drawChart(data);
+
+    </script>
+
+  </body>
+</html>
